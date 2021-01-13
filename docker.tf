@@ -3,9 +3,6 @@ data "template_file" "cloud-config" {
 
   vars = {
     ssh_key       = var.ssh_key
-    # repo_url      = var.repo_url
-    # repo_username = var.repo_username
-    # repo_password = var.repo_password
   }
 }
 
@@ -13,10 +10,14 @@ variable "ssh_key" {
   type = string
 }
 
+variable "name" {
+  type = string
+}
+
 module "docker" {
   source = "./src"
 
-  name               = "dojo12345"
+  name               = var.name
   vpc_id             = aws_vpc.main.id
   cloud_config_extra          = data.template_file.cloud-config.rendered
 
