@@ -15,7 +15,7 @@ variable "name" {
 }
 
 variable "instances" {
-  type = int
+  type = integer
   default = 1
 }
 
@@ -25,7 +25,7 @@ variable "worker_instance_type" {
 }
 
 variable "manager_instances" {
-  type = int
+  type = integer
   default = 1
 }
 
@@ -35,7 +35,7 @@ variable "manager_instance_type" {
 }
 
 variable "volume_size" {
-  type = int
+  type = integer
   default = 8
 }
 
