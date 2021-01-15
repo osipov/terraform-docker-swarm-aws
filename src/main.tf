@@ -53,7 +53,7 @@ resource "aws_subnet" "workers" {
     8,
     var.worker_subnet_segment_start + count.index,
   )
-  map_public_ip_on_launch = false
+  map_public_ip_on_launch = true
 
   tags = {
     Name = "${var.name} workers ${data.aws_availability_zones.azs.names[count.index]}"
